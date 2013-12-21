@@ -1,0 +1,35 @@
+{
+  "name": "radio-buttons-extension",
+  "version": "0.0.1",
+  "description": "Chrome extension that allows for connection to a radio-buttons server to control a local Google Play Music client remotely.",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io-client": "~0.9.16"
+  },
+  "devDependencies": {
+    "gulp": "~3.2.0",
+    "gulp-browserify": "~0.1.2",
+    "gulp-concat": "~2.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/tec27/radio-buttons-extension"
+  },
+  "keywords": [
+    "google",
+    "play",
+    "music",
+    "radio",
+    "remote",
+    "control"
+  ],
+  "author": "Travis Collins <travis@tec27.com> (http://tec27.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tec27/radio-buttons-extension/issues"
+  },
+  "homepage": "https://github.com/tec27/radio-buttons-extension"
+}
