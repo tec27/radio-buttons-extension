@@ -1,5 +1,6 @@
 var io = require('socket.io-client')
   , buttons = require('./buttons')()
+  , nowPlaying = require('./now-playing')()
 
 function blockUntilLoaded() {
   var loadingIndicator = document.querySelector('#loading-progress')
@@ -16,6 +17,7 @@ var socket
                   , forward: false
                   }
   , isPlaying = false
+  , nowPlayingState = {}
 function initialize() {
   socket = io.connect('http://localhost:3000/players')
 
@@ -25,6 +27,7 @@ function initialize() {
       .emit('buttons/rewind/state', buttonState.rewind)
       .emit('buttons/forward/state', buttonState.forward)
       .emit('playing', isPlaying)
+      .emit('nowPlaying', nowPlayingState)
   }).on('play', function() {
     buttons.play()
   }).on('pause', function() {
@@ -60,6 +63,13 @@ buttons.on('playPauseDisabled', function(isDisabled) {
   isPlaying = false
   if (socket) {
     socket.emit('playing', isPlaying)
+  }
+})
+
+nowPlaying.on('nowPlaying', function(state) {
+  nowPlayingState = state
+  if (socket) {
+    socket.emit('nowPlaying', nowPlayingState)
   }
 })
 
