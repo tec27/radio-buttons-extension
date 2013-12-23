@@ -55,7 +55,7 @@ Buttons.prototype._emitDisabledState = function(buttonElem) {
 }
 
 Buttons.prototype._emitPlayingState = function() {
-  this.emit(this._isPlaying ? 'playing' : 'paused')
+  this.emit(this._isPlaying() ? 'playing' : 'paused')
 }
 
 Buttons.prototype._isPlaying = function() {
@@ -78,7 +78,7 @@ Buttons.prototype.pause = function() {
   this._playPauseBtn.click()
 }
 
-Buttons.prototype.back = function() {
+Buttons.prototype.rewind = function() {
   this._rewindBtn.click()
 }
 

@@ -25,8 +25,14 @@ function initialize() {
       .emit('buttons/rewind/state', buttonState.rewind)
       .emit('buttons/forward/state', buttonState.forward)
       .emit('playing', isPlaying)
-  }).on('buttons/play', function() {
+  }).on('play', function() {
     buttons.play()
+  }).on('pause', function() {
+    buttons.pause()
+  }).on('rewind', function() {
+    buttons.rewind()
+  }).on('forward', function() {
+    buttons.forward()
   })
 }
 
