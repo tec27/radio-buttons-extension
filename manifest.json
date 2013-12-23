@@ -19,7 +19,8 @@
       ],
       "js": [
         "js/radio-buttons.js"
-      ]
+      ],
+      "run_at": "document_end"
     }
   ]
 }

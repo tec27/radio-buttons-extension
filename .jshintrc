@@ -18,6 +18,7 @@
     "laxcomma": true,
 
     // Environments
+    "browser"       : true,
     "node"          : true,
 
     // Custom Globals
